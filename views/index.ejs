@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <title>Lift Log</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-social.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <a class="navbar-brand" href="/">Workout Log</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="workouts">Workouts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="history">History</a>
+          </li>
+        </ul>
+        <!-- THIS IS HIDDEN FOR MD AND LARGER SCREENS -->
+        <form class="d-md-none">
+          <input class="form-group form-control" type="text" placeholder="username" aria-label="Username">
+          <input class="form-group form-control" type="password" placeholder="password" aria-label="password">
+          <button class="btn btn-block btn-outline-light btn-sm mb-3" type="submit">Login</button>
+        </form>
+
+        <!-- LOGIN MODAL TRIGGER BUTTON -->
+        <button type="button" class="btn mr-2 btn-outline-light col-md-2 btn-sm d-none d-md-block" data-toggle="modal" data-target="#loginModel">
+          Login
+        </button>
+        
+        <!-- REGISTER BUTTON ALWAYS DISPLAYED -->
+        <a class="btn btn-outline-light btn-sm col-md-2 btn-block" href="#">
+          Register
+        </a>
+      
+      </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Login</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input class="form-group form-control" type="text" placeholder="username" aria-label="Username">
+              <input class="form-group form-control" type="password" placeholder="password" aria-label="password">
+              <button class="btn btn-block btn-outline-dark btn-sm mb-3" type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END LOGIN MODAL -->
+
+    <div class="container"> <!-- MAIN CONTAINER -->
+
+      <!-- CAROUSEL -->
+      <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/back-squat.jpg" alt="First slide">
+            <div class="carousel-caption">
+              <h2>TRACK YOUR PROGRESS</h2>
+              <a class="col-md-6 btn btn-outline-light" href="">SIGN UP</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/strong-woman.jpg" alt="Second slide">
+            <div class="carousel-caption">
+              <h2>VIEW YOUR HISTORY</h2>
+              <a class="col-md-6 btn btn-outline-light" href="">SIGN UP</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/man-1.jpg" alt="Third slide">
+            <div class="carousel-caption">
+              <h2>GET RESULTS</h2>
+              <a class="col-md-6 btn btn-outline-light" href="">SIGN UP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END CAROUSEL -->
+
+      <div class="headline">
+        <hr>
+        <h4>Add your own exercises and create custom workout routines</h4>
+        <hr>
+      </div>
+
+      <div class="row">
+        <!-- EXERCISES -->
+        <div class="col-sm-6 workouts">
+            <a data-toggle="collapse" href="#collapseExercise" aria-expanded="false" aria-controls="collapseExercise">
+                <h1>Exercises</h1>
+            </a>
+            <input id="add-exercise" type="text" name="exercise" placeholder="Add an exercise">
+            <ul id="collapseExercise" class="list-unstyled collapse show">
+                <li>Bench Press</li>
+                <li>Pull Ups</li>
+                <li>Barbell Row</li>
+                <li>Front Squat</li>
+                <li>Back Squat</li>
+                <li>Overhead Press</li>
+            </ul>
+        </div>
+
+        <!-- WORKOUTS -->
+        <div class="col-sm-6 workouts">
+            <a data-toggle="collapse" href="#collapseWorkouts" aria-expanded="false" aria-controls="collapseWorkouts">
+                <h1>Workouts</h1>
+            </a>
+            <ul id="collapseWorkouts" class="list-unstyled collapse show">
+                <li>Upper Body</li>
+                <li>Leg Day</li>
+                <li>Chect and Back</li>
+            </ul>
+            <button id="add-workout-btn" class="btn btn-block btn btn-outline-light">Add Workout</button>
+        </div>
+      </div>
+
+      <div class="headline">
+        <hr>
+        <h4>Easily track your progress</h4>
+        <hr>
+      </div>
+
+      <div class="row">
+
+        <div class="col">
+          <a data-toggle="collapse" href="#collapseSquat" aria-expanded="false" aria-controls="collapseSquat">
+            <h1>Squat</h1>
+          </a>
+          <div id="collapseSquat" class="show">
+            <table class="table table-inverse table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Set #</th>
+                  <th>Previous</th>
+                  <th>Weight</th>
+                  <th>Reps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>100 lb x 10</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-block btn btn-outline-light">Add Set</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <a data-toggle="collapse" href="#collapseBenchpress" aria-expanded="false" aria-controls="collapseBenchpress">
+            <h1>Bench Press</h1>
+          </a>
+          <div id="collapseBenchpress" class="show">
+            <table class="table table-inverse table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Set #</th>
+                  <th>Previous</th>
+                  <th>Weight</th>
+                  <th>Reps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>100 lb x 10</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-block btn btn-outline-light">Add Set</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="headline">
+        <hr>
+        <h4>View your workout history</h4>
+        <hr>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <a data-toggle="collapse" href="#collapseHistory" aria-expanded="false" aria-controls="collapseHistory">
+                  <h1>Workout History</h1>
+              </a>
+          <div id="collapseHistory" class="show">
+            <table class="table table-inverse table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Workout 1</th>
+                  <th>August 29, 2017</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Bench Press</td>
+                  <td>100 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Bench Press</td>
+                  <td>100 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Bench Press</td>
+                  <td>100 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Front Squat</td>
+                  <td>200 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Front Squat</td>
+                  <td>200 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Front Squat</td>
+                  <td>200 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Deadlift</td>
+                  <td>250 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Deadlift</td>
+                  <td>250 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Deadlift</td>
+                  <td>250 lb x 10</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="table table-inverse table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Workout 2</th>
+                  <th>August 27, 2017</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Bench Press</td>
+                  <td>100 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Bench Press</td>
+                  <td>100 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Bench Press</td>
+                  <td>100 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Front Squat</td>
+                  <td>200 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Front Squat</td>
+                  <td>200 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Front Squat</td>
+                  <td>200 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Deadlift</td>
+                  <td>250 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Deadlift</td>
+                  <td>250 lb x 10</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Deadlift</td>
+                  <td>250 lb x 10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div> <!--MAIN CONTAINER-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/liftlog.js"></script>
+  </body>
+</html>

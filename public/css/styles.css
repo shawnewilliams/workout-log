@@ -1,0 +1,107 @@
+nav {
+  margin-bottom: 50px;
+}
+
+body {
+  background-color: black;
+  /*background-image: url("../assets/weight-lifter.png");*/
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#add-exercise, #add-workout, .workouts li {
+  font-size: 18px;
+  line-height: 40px;
+  color: white;
+  background-color: #212529;
+  width: 100%;
+  padding-left: 10px;
+  box-sizing: border-box;
+  border: 1px solid #32383e;
+}
+
+#add-exercise, #add-workout {
+  background-color: #212529;
+}
+
+#add-exercise:focus, #add-workout:focus {
+  background-color: #fff;
+  border: 3px solid #790101;
+  outline: none;
+  color: black;
+}
+
+#form-container {
+  background-color: #212529;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #790101;
+  margin: 20px 0 0 0;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+h1:hover {
+  background-color: #8c0101;
+}
+
+h2{
+  font-size: 2.5em;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.btn-outline-light:hover{
+  color: grey;
+}
+
+.navbar {
+  background-color: #790101;
+}
+
+.carousel-caption {
+   top: auto;
+   bottom: 20%;
+}
+
+.modal-header {
+  background-color: #790101;
+  color: white;
+}
+.modal-title {
+  margin: 0 auto
+}
+
+.modal .close {
+  color: white;
+}
+
+.headline {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.sets-display {
+  display: none;
+}
+
+/*.btn-outline-light:hover{*/
+/*  background-color: rgba(255,255,255, .1);*/
+/*  border: 1px solid #4c0101;*/
+/*  color: #4c0101;*/
+/*}*/
