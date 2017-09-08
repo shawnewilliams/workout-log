@@ -77,7 +77,6 @@ app.post("/add-workout", function(req,res){
     var name = req.body.name;
     var newWorkout = {name: name};
     console.log(req.body);
-    console.log(req.body[req.body.exercise]);
     res.redirect("/workouts")
 });
 
