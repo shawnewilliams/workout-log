@@ -76,22 +76,25 @@ app.get("/add-workout", function(req,res){
 app.post("/add-workout", function(req,res){
     var name = req.body.name;
     var exercise = req.body.exercise;
-    var sets = req.body.sets;
+    // FILTER OUT EMPTY SETS
+    var sets = (req.body.sets).filter(function(i){
+                    return i!="";
+                });
     var newWorkout = {name: name};
-    // console.log(req.body);
-    // console.log(name);
-    
     Workout.create(newWorkout, function(err, newlyCreated){
         if(err){
             console.log(err);
         } else {
-            console.log(newlyCreated);
-            for(var i = 0; i < exercise.length; i++){
+            console.log(req.body);
+            // MAKE SURE EXERCISE IS AN ARRAY
+            if(Array.isArray(exercise)){
+                for(var i = 0; i < exercise.length; i++){
                 newlyCreated.exercise.push({name: exercise[i], sets: sets[i]});
+               }
+            } else {
+                newlyCreated.exercise.push({name: exercise, sets: sets});
             }
-            
             newlyCreated.save();
-            console.log(newlyCreated);
             res.redirect("/workouts");
         }
     });
