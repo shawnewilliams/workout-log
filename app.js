@@ -42,7 +42,7 @@ app.get("/workouts", function(req,res){
 
 //NEW ROUTE - Show form to create new WORKOUT
 app.get("/workouts:workout-name", function(req,res){
-    res.render("add-workout")
+    res.render("add-workout");
 });
 
 // CREATE EXERCISE ROUTE
@@ -75,14 +75,43 @@ app.get("/add-workout", function(req,res){
 // CREATE WORKOUT ROUTE
 app.post("/add-workout", function(req,res){
     var name = req.body.name;
+    var exercise = req.body.exercise;
+    var sets = req.body.sets;
     var newWorkout = {name: name};
-    console.log(req.body);
-    res.redirect("/workouts")
+    // console.log(req.body);
+    // console.log(name);
+    
+    Workout.create(newWorkout, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            console.log(newlyCreated);
+            for(var i = 0; i < exercise.length; i++){
+                newlyCreated.exercise.push({name: exercise[i], sets: sets[i]});
+            }
+            
+            newlyCreated.save();
+            console.log(newlyCreated);
+            res.redirect("/workouts");
+        }
+    });
 });
 
 // HISTORY SHOW ROUTE
 app.get("/history", function(req,res){
-    res.render("history")
+    res.render("history");
+});
+
+// DO WORKOUT ROUTE
+app.get("/do-workout/:id", function(req,res){
+    Workout.findById(req.params.id, function(err, foundWorkout){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("do-workout", {workout: foundWorkout});
+        }
+    });
+
 });
 
 

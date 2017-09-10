@@ -104,7 +104,7 @@
             </form>
             <ul id="collapseWorkouts" class="list-unstyled collapse show">
                 <% workouts.forEach(function(workout){ %>
-                  <li><%= workout.name %></li>
+                  <li><a href="do-workout/<%= workout._id %>"><%= workout.name %></a></li>
                 <% }); %>
             </ul>
         </div>

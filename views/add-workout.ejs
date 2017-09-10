@@ -86,34 +86,41 @@
               <form action="/add-workout" method="POST">
                 <input id="add-workout" type="text" name="name" value="<%=name%>" required>
                 <ul id="collapseWorkouts" class="list-unstyled collapse show">
+                  
+                  <!-- Begin loop -->
+                    <% var count = 0; %>
                     <% exercises.forEach(function(exercise){ %>
+                        
                         <li>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6">
                                     <label class="form-check-label">
-                                        <input class="form-check-input exercise-input" name="exercise" type="checkbox" value=name:<%= exercise.name %>>
+                                        <input class="exercise_<%= count %> form-check-input exercise-input" name="exercise" type="checkbox" value="<%= exercise.name %>">
                                         <%= exercise.name %>
                                     </label>
                                 </div>
                                 <div class="col-xs-6 col-sm-5 justify-content-center">
-                                    <label class="mr-sm-2" for="<%= exercise.name %>">Sets</label>
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0 sets-display" disabled name="<%= exercise.name %>" id="<%= exercise.name %>">
-                                        <option selected value="">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                    </select>
+                                    <label class="mr-sm-2">Sets
+                                      <select class="set_<%= count %> custom-select mb-2 mr-sm-2 mb-sm-0 sets-display" name="sets">
+                                          <option selected value="">0</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                          <option value="6">6</option>
+                                          <option value="7">7</option>
+                                          <option value="8">8</option>
+                                          <option value="9">9</option>
+                                          <option value="10">10</option>
+                                      </select>
+                                    </label>
                                 </div>
                             </div>
                         </li>
+                        <% count = count + 1; %>
                     <% }); %>
+                    <!-- End loop -->
                 </ul>
                 <button type="submit" class="btn btn-block btn-outline-light mt-2 mb-2">Save Workout</button>
             </form>
@@ -128,10 +135,22 @@
     <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/liftlog.js"></script>
     <script>
-      $(".exercise-input").on("click", function(){
-        $("select").toggleClass("sets-display");
-        $("select").removeAttr("disabled");
-      })
+    
+      var count = document.querySelectorAll('[name="exercise"]');
+     
+      for(var i = 0; i < count.length; i++){
+        document.querySelector(".exercise_" + i).addEventListener("change", function(){
+          var exercise_num = document.querySelector("[name='exercise']").className[9];
+          var sets_num = document.querySelector("[name='sets']").className[4];
+             if (!this.checked){
+                document.querySelector(".set_" + this.className[9]).classList.add("sets-display");
+                document.querySelector(".set_" + this.className[9]).setAttribute("disabled", '');
+             } else {
+               document.querySelector(".set_" + this.className[9]).classList.remove("sets-display");
+              document.querySelector(".set_" + this.className[9]).removeAttribute("disabled");
+             }
+        });
+      }
       
     </script>
   </body>
