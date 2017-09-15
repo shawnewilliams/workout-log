@@ -7,7 +7,8 @@ var express         = require("express"),
     localStrategy   = require("passport-local"),
     methodOverride  = require("method-override"),
     Exercise        = require("./models/exercise"),
-    Workout         = require("./models/workout");
+    Workout         = require("./models/workout"),
+    CompletedWorkout = require("./models/completed-workout");
     
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/lift_log", {useMongoClient: true});
@@ -114,9 +115,42 @@ app.get("/do-workout/:id", function(req,res){
             res.render("do-workout", {workout: foundWorkout});
         }
     });
-
 });
 
+
+// DO WORKOUT POST
+app.post("/do-workout/:id", function(req,res){
+    var exercises = Object.keys(req.body);
+    console.log(req.body);
+    var newCompleted = req.body[exercises[0]];
+    
+   
+    // console.log(newCompleted);
+    Workout.findById(req.params.id, function(err, foundWorkout){
+        if(err){
+            console.log(err);
+        } else {
+            CompletedWorkout.create(req.body, function(err, newlyCreated){
+                if(err){
+                    console.log(err);
+                } else {
+                    // newlyCreated.save();
+                    // console.log(newlyCreated);
+                    // foundWorkout.completed.push(newlyCreated);
+                    // foundWorkout.save();
+                    // console.log(foundWorkout);
+                    // console.log(newlyCreated);
+                    res.redirect("/workouts");
+                }
+            });
+        }
+    });
+    
+});
+
+app.get("/photo-credits", function(req,res){
+    res.render("photo-credits");
+});
 
 
 

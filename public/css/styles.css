@@ -1,12 +1,28 @@
 nav {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 body {
-  background-color: black;
+  /*height: 100%;*/
+background: -moz-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(105,0,0,1)), color-stop(72%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+background:-webkit-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* ie10+ */
+background:radial-gradient(ellipse at center, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#690000', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
+
   /*background-image: url("../assets/weight-lifter.png");*/
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /*background-size: 100%;*/
+  /*background-repeat: no-repeat;*/
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #8c0101;
 }
 
 #add-exercise, #add-workout, .workouts li {
@@ -30,6 +46,46 @@ body {
   outline: none;
   color: black;
 }
+
+.exercise-input {
+  color: white;
+  padding-left: 6%;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  border: none;
+}
+
+.exercise-input:focus {
+  background-color: #fff;
+  /*border: 3px solid #790101;*/
+  outline: none;
+  color: black;
+}
+
+.table td, .table th {
+  padding: 0;
+  line-height: 40px;
+  text-align: center;
+}
+
+td:nth-child(3), td:nth-child(4) {
+  width: 30%;
+}
+
+.history th {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.history td, .history th:nth-child(3) {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.history td:nth-child(2) {
+  text-align: center;
+}
+
 
 #form-container {
   background-color: #212529;
@@ -69,9 +125,8 @@ a:hover{
   background-color: #790101;
 }
 
-.carousel-caption {
-   top: auto;
-   bottom: 20%;
+.carousel-caption .caption-large{
+  padding-bottom: 20%;
 }
 
 .modal-header {
@@ -93,11 +148,40 @@ a:hover{
 }
 
 hr {
-  border: 1px solid rgba(255, 255, 255, .5);
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
 }
 
 .sets-display {
   display: none;
+}
+
+footer {
+  margin-top: 30px;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  bottom: 0;
+}
+
+footer a {
+  color: #790101;
+}
+
+.photo-credits p, .photo-credits a{
+  color: grey;
+  font-size: .5em;
+  margin: 2px;
+}
+
+.navbar-brand img {
+  height: 20px;
+  margin-bottom: 4px;
+}
+
+.modal button:hover {
+  background-color: #790101;
+  border: 1px solid white;
 }
 
 /*.btn-outline-light:hover{*/

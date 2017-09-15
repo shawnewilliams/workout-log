@@ -9,13 +9,13 @@
 
     <!-- Bootstrap 4 BETA CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark">
-      <a class="navbar-brand" href="/">Workout Log</a>
+      <a class="navbar-brand" href="/"><img src="img/barbell.png"> Workout Log</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,31 +23,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link active" href="workouts">Workouts <span class="sr-only">(current)</span></a>
+            <a class="nav-link active" href="workouts"><i class="fa fa-pencil" aria-hidden="true"></i> Workouts <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="history">History</a>
+            <a class="nav-link" href="history"><i class="fa fa-bar-chart" aria-hidden="true"></i> History</a>
           </li>
         </ul>
         <!-- THIS IS HIDDEN FOR MD AND LARGER SCREENS -->
         <form class="d-md-none">
           <input class="form-group form-control" type="text" placeholder="username" aria-label="Username">
           <input class="form-group form-control" type="password" placeholder="password" aria-label="password">
-          <button class="btn btn-block btn-outline-light btn-sm mb-3" type="submit">Login</button>
+          <button class="btn btn-block btn-outline-light btn-sm mb-3" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
         </form>
 
         <!-- LOGIN MODAL TRIGGER BUTTON -->
         <button type="button" class="btn mr-2 btn-outline-light col-md-2 btn-sm d-none d-md-block" data-toggle="modal" data-target="#loginModel">
-          Login
+          <i class="fa fa-sign-in" aria-hidden="true"></i> Login
         </button>
         
-        <!-- REGISTER BUTTON ALWAYS DISPLAYED -->
-        <a class="btn btn-outline-light btn-sm col-md-2 btn-block" href="#">
-          Register
-        </a>
+       <!-- SIGN UP BUTTON ALWAYS DISPLAYED -->
+        <button type"button" class="btn btn-outline-light btn-sm col-md-2 btn-block" data-toggle="modal" data-target="#signUpModel">
+          <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up
+        </button>
       
       </div>
     </nav>
@@ -73,8 +73,30 @@
       </div>
     </div>
     <!-- END LOGIN MODAL -->
+    
+    <!-- SIGN UP MODAL -->
+    <div class="modal fade" id="signUpModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Sign Up</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input class="form-group form-control" type="text" placeholder="username" aria-label="Username">
+              <input class="form-group form-control" type="password" placeholder="password" aria-label="password">
+              <button class="btn btn-block btn-outline-dark btn-sm mb-3" type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SIGN UP MODAL -->
 
-    <div class="container">
+    <div class="container mb-5">
       <div class="row">
         <!-- EXERCISES -->
         <div class="col-sm-6 workouts">
@@ -115,6 +137,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js/dist/umd/popper.min.js"></script>
+    <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/liftlog.js"></script>
   

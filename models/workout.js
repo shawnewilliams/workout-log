@@ -10,9 +10,8 @@ var workoutSchema = new mongoose.Schema({
         name: String,
         sets: String,
         }
-        ]
-    
-    
+    ],
+    completed: []
 });
 
 module.exports = mongoose.model("Workout", workoutSchema);
