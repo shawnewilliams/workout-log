@@ -11,7 +11,8 @@ var express         = require("express"),
     CompletedWorkout = require("./models/completed-workout");
     
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/lift_log", {useMongoClient: true});
+// mongoose.connect("mongodb://localhost/lift_log", {useMongoClient: true});
+mongoose.connect("mongodb://shawn:shawnlift_log@ds135234.mlab.com:35234/lift_log", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
