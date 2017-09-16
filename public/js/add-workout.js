@@ -1,3 +1,5 @@
+// This code makes works with the add-workout page. It makes the sets select input visible when clicking on the exercise check box
+
 var count = document.querySelectorAll('[name="exercise"]');
      
       for(var i = 0; i < count.length; i++){

@@ -127,8 +127,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <!--HIDDEN INPUT-->
-                  <!--<input type="text" class="sets-display" name="<%= exercise.name %>[exerciseName]" value="<%= exercise.name %>"-->
                   
                   <% for(var i = 1; i <= parseInt(exercise.sets); i++){ %>
                     <tr>
@@ -139,6 +137,7 @@
                     </tr>
                   <% } %>
                 </table>
+                <!--TO BE ADDED LATER-->
                 <!--<button class="btn btn-block btn btn-outline-light">Add Set</button>-->
             </div>
           </div>
@@ -148,15 +147,12 @@
       </form>
     </div>
       
-      
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/popper.js/dist/umd/popper.min.js"></script>
     <script src="/js/tether.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-     
   
   </body>
 </html>

@@ -3,18 +3,14 @@ nav {
 }
 
 body {
-  /*height: 100%;*/
-background: -moz-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* ff3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(105,0,0,1)), color-stop(72%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
-background:-webkit-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
-background: -o-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
-background: -ms-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* ie10+ */
-background:radial-gradient(ellipse at center, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* w3c */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#690000', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
-
-  /*background-image: url("../assets/weight-lifter.png");*/
-  /*background-size: 100%;*/
-  /*background-repeat: no-repeat;*/
+ /*GRADIENT*/
+  background: -moz-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(105,0,0,1)), color-stop(72%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+  background:-webkit-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* ie10+ */
+  background:radial-gradient(ellipse at center, rgba(105,0,0,1) 0%, rgba(0,0,0,1) 72%, rgba(0,0,0,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#690000', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
 }
 
 a {
@@ -183,9 +179,3 @@ footer a {
   background-color: #790101;
   border: 1px solid white;
 }
-
-/*.btn-outline-light:hover{*/
-/*  background-color: rgba(255,255,255, .1);*/
-/*  border: 1px solid #4c0101;*/
-/*  color: #4c0101;*/
-/*}*/

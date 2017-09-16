@@ -109,7 +109,7 @@
                 <input id="add-workout" type="text" name="name" value="<%=name%>" required>
                 <ul id="collapseWorkouts" class="list-unstyled collapse show">
                   
-                  <!-- Begin loop -->
+                  <!-- Begin loop to add select workouts and sets-->
                     <% var count = 0; %>
                     <% exercises.forEach(function(exercise){ %>
                         
@@ -142,7 +142,7 @@
                         </li>
                         <% count = count + 1; %>
                     <% }); %>
-                    <!-- End loop -->
+                    <!-- End loop to select workouts and sets-->
                 </ul>
                 <button type="submit" class="btn btn-block btn-outline-light mt-2 mb-5">Save Workout</button>
             </form>
